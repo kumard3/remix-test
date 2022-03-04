@@ -1,31 +1,12 @@
-import { LoaderFunction, useLoaderData } from "remix";
-
-export const loader: LoaderFunction = async () => {
-  const api = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const res = api.json();
-  return res;
-};
+import { Link } from "remix";
 
 export default function Index() {
-  const data = useLoaderData();
-
   return (
     <div className="bg-black min-h-screen text-white/80">
-      <h1 className="text-center text-6xl py-10 ">Remix Basic Data fetching </h1>
-      <div className="grid justify-center flex-col items-center  ">
-        {data.map(
-          (n: { body: string; title: string; id: number }, index: number) => {
-            return (
-              <div
-                key={index}
-                className="bg-slate-700 my-3 p-5 rounded-2xl max-w-3xl"
-              >
-                <h1 className="text-3xl font-mono ">{n.title}</h1>
-                <p className="text-xl">{n.body}</p>
-              </div>
-            );
-          }
-        )}
+      <div className="flex text-2xl p-10 ">
+
+      <Link to="/ApiDataFetch" className="bg-slate-600 px-3 mx-2 py-[.6em] flex rounded-lg " > ApiDataFetch</Link>
+      <Link to="/Todo" className="bg-slate-600 px-3 mx-2 py-[.6em] rounded-lg flex"  > Todo</Link>
       </div>
     </div>
   );
