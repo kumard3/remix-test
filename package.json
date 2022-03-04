@@ -5,9 +5,12 @@
   "license": "",
   "sideEffects": false,
   "scripts": {
-    "build": "cross-env NODE_ENV=production remix build",
-    "dev": "cross-env NODE_ENV=development remix dev",
-    "postinstall": "remix setup node"
+    "postinstall": "remix setup node",
+    "build": "npm run build:css && remix build",
+    "build:css": "tailwindcss -o ./app/tailwind.css",
+    "dev": "concurrently \"npm run dev:css\" \"remix dev\"",
+    "dev:css": "tailwindcss -o ./app/tailwind.css --watch",
+    "start": "remix-serve build"
   },
   "dependencies": {
     "@remix-run/react": "^1.2.3",
@@ -23,6 +26,7 @@
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
     "cross-env": "^7.0.3",
+    "concurrently": "^7.0.0",
     "eslint": "^8.9.0",
     "typescript": "^4.5.5"
   },
