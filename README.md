@@ -1,23 +1,34 @@
-# Tailwindcss Example
+# Welcome to Remix!
 
-Integrate Remix with tailwindcss.
+- [Remix Docs](https://remix.run/docs)
 
-## Preview
+## Deployment
 
-Open this example on [CodeSandbox](https://codesandbox.io/s/remix-tailwind-2x8pg):
+After having run the `create-remix` command and selected "Vercel" as a deployment target, you only need to [import your Git repository](https://vercel.com/new) into Vercel, and it will be deployed.
 
-[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/remix-run/remix/tree/main/examples/tailwindcss)
+If you'd like to avoid using a Git repository, you can also deploy the directory by running [Vercel CLI](https://vercel.com/cli):
 
-## Example
+```sh
+npm i -g vercel
+vercel
+```
 
-This example shows how to use Tailwind CSS (v3.0) with Remix. It follows the steps outlined in the official [Remix Styling docs](https://remix.run/docs/en/v1/guides/styling#tailwind).
+It is generally recommended to use a Git repository, because future commits will then automatically be deployed by Vercel, through its [Git Integration](https://vercel.com/docs/concepts/git).
 
-Relevant files:
+## Development
 
-- [package.json](./package.json) where the tailwind CLI is used.
-- [tailwind.config.js](./tailwind.config.js) where tailwind is configured.
-- [app/root.tsx](./app/root.tsx) where tailwind is imported.
+To run your Remix app locally, make sure your project's local dependencies are installed:
 
-## Related Links
+```sh
+npm install
+```
 
-[Tailwind CSS](https://tailwindcss.com)
+Afterwards, start the Remix development server like so:
+
+```sh
+npm run dev
+```
+
+Open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
+
+If you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
