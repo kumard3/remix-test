@@ -8,7 +8,7 @@ export const loader: LoaderFunction = async () => {
 
 export default function Index() {
   const data = useLoaderData();
-  console.log(data);
+
   return (
     <div className="bg-black min-h-screen text-white/80">
       <h1 className="text-center text-6xl py-10 ">Remix Basic Data fetching </h1>
