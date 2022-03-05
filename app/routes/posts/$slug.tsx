@@ -21,3 +21,5 @@ export default function PostSlug() {
     </div>
   );
 }
+
+//<main dangerouslySetInnerHTML={{ __html: post.html }} />;
